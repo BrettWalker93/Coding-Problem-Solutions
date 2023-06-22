@@ -16,15 +16,13 @@ public:
                 
                 if (nums[j] == t) {
                     
-                    answer[0] = j;
-                    answer[1] = i;
-                    goto re; 
+                    return {i, j}
                 }
                 
             }
                        
         }
         
-        re: return answer;
+        return {0, 0};
     }
 };
