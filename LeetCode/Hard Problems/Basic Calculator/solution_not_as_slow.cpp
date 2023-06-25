@@ -21,11 +21,15 @@ public:
             //cout << "c " << c << endl;
             if (c == '(') {
                 pair<int, int> cur = eval(s, i + 1);
-                l += cur.first;
+                if (isneg) {
+                    l -= cur.first;
+                    isneg = false;
+                }
+                else l += cur.first;
                 i = cur.second;
             }
             else if (c == ')') {
-                return {l, i};
+                return {l+r, i};
             }
             else if (c == '+') {
 
@@ -60,6 +64,9 @@ public:
             }
             idx = i;
         }
+        cout << "adding " << l << " to " << r << endl;
+        if (isneg) l -= r;
+        else l += r;
         return {l, idx};
 
     }
@@ -69,11 +76,8 @@ public:
         int n = numlist.size();
 
         for (int i = 0; i < n; i++) {
-            int u = numlist[i];
-            for (int j = 1; j < n - i; j++) {
-                u *= 10;
-            }
-            a += u;
+            
+            a = a * 10 + numlist[i];
         }
 
         return a;
