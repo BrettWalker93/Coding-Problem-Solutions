@@ -1,6 +1,11 @@
 class Solution {
 public:
     vector<string> fullJustify(vector<string>& words, int maxWidth) {
+
+        /*
+        add words to a line until doing so would exceed max width,
+        then construct a line by distributing spaces until max width is reached
+        */
         
         vector<string> ans;
 
