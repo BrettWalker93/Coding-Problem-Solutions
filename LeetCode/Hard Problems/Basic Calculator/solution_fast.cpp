@@ -2,6 +2,12 @@ class Solution {
 public:
     int calculate(string s) {
 
+        /*
+        keep a running total of the left side of additions/subtractions
+        store this total in a stack when entering parenthesis
+        pop the stack when closing parentheses
+        */
+        
         vector<int> val, signs;
         int sign = 1;
         int ans = 0;
