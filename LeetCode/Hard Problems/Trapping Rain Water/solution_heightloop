@@ -1,3 +1,5 @@
+//this solution is slower than the squeeze loop
+
 class Solution {
 public:
     int trap(vector<int>& height) {
