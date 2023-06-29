@@ -33,7 +33,6 @@ public:
                 }
                 else if (i == n - 1) {}
                 else {
-                    cout << "here" << endl;
                     int j = i;
                     while (j < n - 1) {
                         if (ratings[j] <= ratings[j+1]) {
@@ -41,7 +40,6 @@ public:
                         }
                         else j++;
                     }
-                    cout << "j " << j << endl;
                     int k = j;
                     int add = 0;
                     while (j > i) {
@@ -53,7 +51,6 @@ public:
                     i = k;
                     prevc = 0;
                     decstep = 0;
-                    cout << "candy after descent loop " << candy << endl;
                     it = ratings[i];
                 }
             }
@@ -62,7 +59,6 @@ public:
                 decstep = 0;
             }
             prev = it;
-            cout << it << ": " << candy << endl;
         }
         return candy + n;
     }
