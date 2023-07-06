@@ -33,7 +33,7 @@ class tag {
         parent = t->parent;
     }
     
-    void add_daughter(string s, tag t) {
+    void add_daughter(string s, tag t) { // see NOTE (down)
         dau.insert(pair<string, tag>(s, new tag(&t)));
     }
     
@@ -74,7 +74,7 @@ class tag_tree {
 
     void add_tag(string s) {
         
-        current_tag->add_daughter(s, tag(s, *current_tag));
+        current_tag->add_daughter(s, tag(s, *current_tag)); // NOTE: add_daughter should probably return the reference to the daughter which was added, then we can simply current_tag = current_tag->add_daughter(~args)
         current_tag = &current_tag->find_daughter(s);
     }
 
